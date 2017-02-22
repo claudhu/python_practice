@@ -10,7 +10,7 @@ LINE為目前台灣主流的通訊軟體，並且提供相對應的Message API�
  - 使用過Flask的Python Micro Framwork 更好
  - Heroku帳號(需要把軟體部署到PAAS的環境，以便提供長期服務)
 
-## Tools  
+## Tools  XX
 
  - IDE(任何一種都可以，推薦Sublime/Atom/Visul Studio Code) 
  - 作業系統(皆可! 推薦使用Linux or MacOS) 
