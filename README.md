@@ -54,8 +54,8 @@ cd python_line_robot ## 進入我們的資料夾
 touch app.py ## 創建一個名為app的檔案
 ```
 
-
-app.py
+## 添加程式碼至app.py
+**app.py**
 ``` python
 from flask import Flask, request, abort
 
