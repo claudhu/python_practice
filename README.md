@@ -29,4 +29,5 @@ LINE為目前台灣主流的通訊軟體，並且提供相對應的Message API�
  8. 上傳程式碼至Heroku 完成
 
 
-## 先Line@官方網站註冊申請你的LINE@Heroku帳號
+## 先Line@官方網站註冊申請你的LINE@帳號  
+需要接著你需要再設定取得你機器人的`ChannelID` 還有 `AccessToken`(這兩個務必保管好，他是你機器人工作的主要工具)
