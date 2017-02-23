@@ -127,12 +127,12 @@ if __name__ == "__main__":
 ```
 
 ## 部署程式碼至Heroku
-> 記得要先至Heroku註冊一個免費帳號使用
+> 記得要先至Heroku註冊一個免費帳號使用  
 ```bash
 heroku login # 登入Heroku 系統會要求你輸入帳號跟密碼
 git add * 
 git commit -am "start to run yout bot"
-git push heroku master ##部署你的程式碼至Heroku帳號
+git push heroku master ##上傳檔案至Heroku部署你的程式碼
 ```
 
 ## 設定LineBot的Callback網址  
