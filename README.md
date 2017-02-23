@@ -35,8 +35,72 @@ LINE為目前台灣主流的通訊軟體，並且提供相對應的Message API�
 ## 前往Heroku並且註冊一個帳號，然後在電腦上安裝Heroku-CLI  
 當註冊完畢並且Heroku-CLI也安裝完畢的時候，您就是可在`終端機`的頁面輸入`Heroku login`，然後輸入你的帳號跟密碼就可以開始與Heroku的Server連動囉。接著我們要創建一個資料夾來放置我們的專案。  
 
+
+## 安裝LINE bot SDK
+``` bash
+# install line bot sdk
+pip install line-bot-sdk
+```
+
+## 安裝網路服務微框架  Flask
+```bash
+pip install flask
+```
+
+## 創建一個LINE聊天機器人的專案
 ```bash
 mkdir python_line_robot ## 創建資料夾
 cd python_line_robot ## 進入我們的資料夾
 touch app.py ## 創建一個名為app的檔案
+```
+
+
+app.py
+``` python
+from flask import Flask, request, abort
+
+from linebot import (
+    LineBotApi, WebhookHandler
+)
+from linebot.exceptions import (
+    InvalidSignatureError
+)
+from linebot.models import (
+    MessageEvent, TextMessage, TextSendMessage,
+)
+
+app = Flask(__name__)
+
+line_bot_api = LineBotApi('YOUR_CHANNEL_ACCESS_TOKEN')
+handler = WebhookHandler('YOUR_CHANNEL_SECRET')
+
+
+@app.route("/callback", methods=['POST'])
+def callback():
+    # get X-Line-Signature header value
+    signature = request.headers['X-Line-Signature']
+
+    # get request body as text
+    body = request.get_data(as_text=True)
+    app.logger.info("Request body: " + body)
+
+    # handle webhook body
+    try:
+        handler.handle(body, signature)
+    except InvalidSignatureError:
+        abort(400)
+
+    return 'OK'
+
+
+@handler.add(MessageEvent, message=TextMessage)
+def handle_message(event):
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=event.message.text))
+
+
+if __name__ == "__main__":
+    app.run()
+
 ```
