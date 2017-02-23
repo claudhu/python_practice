@@ -72,10 +72,10 @@ touch app.py ## 創建一個名為app的檔案
 ```
 
 
-## 撰寫requirements.txt 來讓Heroku知道我們目前還需要哪寫Python套件
+## 撰寫requirements.txt 來讓Heroku，我們的微型服務目前還需要哪寫Python套件
 撰寫`requirements.txt`的目地在於讓我們把project上傳到Heroku的時候，Heroku會幫我們去找到相依性的套件，就不用一個一個傻瓜安裝了。  
 ```bash
-pip freeze requirements.txt
+pip freeze > requirements.txt
 ```
 
 ## 添加程式碼至app.py
