@@ -31,9 +31,17 @@ LINE為目前台灣主流的通訊軟體，並且提供相對應的Message API�
 
 ## 先Line@官方網站註冊申請你的LINE@帳號  
 需要接著你需要再設定取得你機器人的`CHANNEL_SECRET` 還有 `ACCESS_TOKEN`(這兩個務必保管好，他是你機器人工作的主要工具)
+[LINE官方網站](http://at.line.me/tw/entry)
 
 ## 前往Heroku並且註冊一個帳號，然後在電腦上安裝Heroku-CLI  
 當註冊完畢並且Heroku-CLI也安裝完畢的時候，您就是可在`終端機`的頁面輸入`Heroku login`，然後輸入你的帳號跟密碼就可以開始與Heroku的Server連動囉。接著我們要創建一個資料夾來放置我們的專案。  
+```shell
+sudo apt-get install software-properties-common # debian only
+sudo add-apt-repository "deb https://cli-assets.heroku.com/branches/stable/apt ./"
+curl -L https://cli-assets.heroku.com/apt/release.key | sudo apt-key add -
+sudo apt-get update
+sudo apt-get install heroku
+```
 
 ## 安裝PIP(Linux)
 ```
@@ -59,12 +67,13 @@ mkdir python_line_robot ## 創建資料夾
 cd python_line_robot ## 進入我們的資料夾
 touch app.py ## 創建一個名為app的檔案
 ```
+
+
 ## 撰寫requirements.txt 來讓Heroku知道我們目前還需要哪寫Python套件
 撰寫`requirements.txt`的目地在於讓我們把project上傳到Heroku的時候，Heroku會幫我們去找到相依性的套件，就不用一個一個傻瓜安裝了。
 ```bash
 pip freeze requirements.txt
 ```
-
 
 ## 添加程式碼至app.py
 **app.py**
@@ -118,8 +127,11 @@ if __name__ == "__main__":
 ```
 
 ## 部署程式碼至Heroku
-```
+> 記得要先至Heroku註冊一個免費帳號使用
+```bash
+heroku login # 登入Heroku 系統會要求你輸入帳號跟密碼
 git add * 
+git commit -am "start to run yout bot"
 git push heroku master ##部署你的程式碼至Heroku帳號
 ```
 
