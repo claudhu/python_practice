@@ -27,3 +27,6 @@ LINE為目前台灣主流的通訊軟體，並且提供相對應的Message API�
  6. 使用PIP 安裝 Flask、LinebotAPI 
  7. 複製Sample Code(App.py) 
  8. 上傳程式碼至Heroku 完成
+
+
+## 先Line@官方網站註冊申請你的LINE@Heroku帳號
