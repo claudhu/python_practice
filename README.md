@@ -31,3 +31,12 @@ LINE為目前台灣主流的通訊軟體，並且提供相對應的Message API�
 
 ## 先Line@官方網站註冊申請你的LINE@帳號  
 需要接著你需要再設定取得你機器人的`ChannelID` 還有 `AccessToken`(這兩個務必保管好，他是你機器人工作的主要工具)
+
+## 前往Heroku並且註冊一個帳號，然後在電腦上安裝Heroku-CLI  
+當註冊完畢並且Heroku-CLI也安裝完畢的時候，您就是可在`終端機`的頁面輸入`Heroku login`，然後輸入你的帳號跟密碼就可以開始與Heroku的Server連動囉。接著我們要創建一個資料夾來放置我們的專案。  
+
+```bash
+mkdir python_line_robot ## 創建資料夾
+cd python_line_robot ## 進入我們的資料夾
+touch app.py ## 創建一個名為app的檔案
+```
