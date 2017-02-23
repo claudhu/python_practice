@@ -113,3 +113,5 @@ git push heroku master ##部署你的程式碼至Heroku帳號
 
 ## 設定LineBot的Callback網址  
 回到LINE機器人的設定網頁，讓我們將Heroku提供的網址回填至此，並且測試連線是否正確。
+
+![img](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
