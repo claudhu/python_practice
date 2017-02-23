@@ -71,8 +71,8 @@ from linebot.models import (
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('YOUR_CHANNEL_ACCESS_TOKEN')
-handler = WebhookHandler('YOUR_CHANNEL_SECRET')
+line_bot_api = LineBotApi('YOUR_CHANNEL_ACCESS_TOKEN') ## 填入你的AccessToken
+handler = WebhookHandler('YOUR_CHANNEL_SECRET') ## 填入你的Channel Secret
 
 
 @app.route("/callback", methods=['POST'])
@@ -104,3 +104,12 @@ if __name__ == "__main__":
     app.run()
 
 ```
+
+## 部署程式碼至Heroku
+```
+git add * 
+git push heroku master ##部署你的程式碼至Heroku帳號
+```
+
+## 設定LineBot的Callback網址  
+回到LINE機器人的設定網頁，讓我們將Heroku提供的網址回填至此，並且測試連線是否正確。
