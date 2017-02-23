@@ -34,7 +34,11 @@ LINE為目前台灣主流的通訊軟體，並且提供相對應的Message API�
 
 ## 前往Heroku並且註冊一個帳號，然後在電腦上安裝Heroku-CLI  
 當註冊完畢並且Heroku-CLI也安裝完畢的時候，您就是可在`終端機`的頁面輸入`Heroku login`，然後輸入你的帳號跟密碼就可以開始與Heroku的Server連動囉。接著我們要創建一個資料夾來放置我們的專案。  
-![Heroku](https://drive.google.com/file/d/0B0J4jSBsN7pvazdybWMyLUlLaTA/view?usp=drivesdk)
+
+## 安裝PIP(Linux)
+```
+sudo apt install python-pip python-dev python-essential
+```
 
 ## 安裝LINE bot SDK
 ``` bash
@@ -45,6 +49,8 @@ pip install line-bot-sdk
 ## 安裝網路服務微框架  Flask
 ```bash
 pip install flask
+sudo pip install --upgrade pip 
+sudo pip install --upgrade virtualenv 
 ```
 
 ## 創建一個LINE聊天機器人的專案
