@@ -53,8 +53,8 @@ mkdir python_line_robot ## 創建資料夾
 cd python_line_robot ## 進入我們的資料夾
 touch app.py ## 創建一個名為app的檔案
 ```
-## 撰寫requirements.txt  
-撰寫`requirements.txt`的目地在於讓我們把project上傳到Heroku的時候，Heroku會幫我們去找到相依性的套件，就不用重複安裝了。
+## 撰寫requirements.txt 來讓Heroku知道我們目前還需要哪寫Python套件
+撰寫`requirements.txt`的目地在於讓我們把project上傳到Heroku的時候，Heroku會幫我們去找到相依性的套件，就不用一個一個傻瓜安裝了。
 ```bash
 pip freeze requirements.txt
 ```
