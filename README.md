@@ -20,7 +20,7 @@ LINE為目前台灣主流的通訊軟體，並且提供相對應的Message API�
 ## Start Up  
 
  1. 申請LINE Developer帳號 
- 2. 申請Heroku雲端部署帳號 
+ 2. 申請Heroku的帳號 
  3. 安裝Heroku-CLI
  4. 安裝GIT(使用Linux-Ubuntu可以省略) 
  5. 安裝Python3.6 with PIP 
@@ -53,6 +53,12 @@ mkdir python_line_robot ## 創建資料夾
 cd python_line_robot ## 進入我們的資料夾
 touch app.py ## 創建一個名為app的檔案
 ```
+## 撰寫requirements.txt  
+撰寫`requirements.txt`的目地在於讓我們把project上傳到Heroku的時候，Heroku會幫我們去找到相依性的套件，就不用重複安裝了。
+```bash
+pip freeze requirements.txt
+```
+
 
 ## 添加程式碼至app.py
 **app.py**
