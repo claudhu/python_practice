@@ -45,12 +45,13 @@ sudo apt-get update
 sudo apt-get install heroku
 ```
 
-## 安裝PIP(Linux)
+## 安裝PIP(套件管理程式)
 ```
 sudo apt install python-pip python-dev python-essential
 ```
 
 ## 安裝LINE bot SDK
+LINE已經為我們準備好了好幾隻API囉!所以我們要使用的功能很簡單，不需要重新建造輪胎了
 ``` bash
 # install line bot sdk
 pip install line-bot-sdk
