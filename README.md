@@ -7,19 +7,19 @@ LINE為目前台灣主流的通訊軟體，並且提供相對應的Message API�
 
  - 略懂Python語法
  -  擁有LINE的帳號 
- - 使用過Flask的Python Micro Framwork 更好
- - Heroku帳號(需要把軟體部署到PAAS的環境，以便提供長期服務)
+ - 使用過Flask的Python Micro Framwork ... 更好
+ - Heroku帳號(需要把軟體部署到PAAS的環境，以便提供長期服務，更重要的是它已經提供Https的網路協定了)
 
 ## Tools  
 
- - IDE(任何一種都可以，推薦Sublime/Atom/Visul Studio Code) 
+ - IDE(任何一種都可以，推薦Sublime/Atom/**Visul Studio Code**) 
  - 作業系統(皆可! 推薦使用Linux or MacOS) 
  - GIT(版本控制工具) 
  - Heroku-CLI (部署工具)
 
 ## Start Up  
 
- 1. 申請LINE Develope帳號 
+ 1. 申請LINE Developer帳號 
  2. 申請Heroku雲端部署帳號 
  3. 安裝Heroku-CLI
  4. 安裝GIT(使用Linux-Ubuntu可以省略) 
@@ -30,11 +30,11 @@ LINE為目前台灣主流的通訊軟體，並且提供相對應的Message API�
 
 
 ## 先Line@官方網站註冊申請你的LINE@帳號  
-需要接著你需要再設定取得你機器人的`ChannelID` 還有 `AccessToken`(這兩個務必保管好，他是你機器人工作的主要工具)
+需要接著你需要再設定取得你機器人的`CHANNEL_SECRET` 還有 `ACCESS_TOKEN`(這兩個務必保管好，他是你機器人工作的主要工具)
 
 ## 前往Heroku並且註冊一個帳號，然後在電腦上安裝Heroku-CLI  
 當註冊完畢並且Heroku-CLI也安裝完畢的時候，您就是可在`終端機`的頁面輸入`Heroku login`，然後輸入你的帳號跟密碼就可以開始與Heroku的Server連動囉。接著我們要創建一個資料夾來放置我們的專案。  
-
+![Heroku](https://drive.google.com/file/d/0B0J4jSBsN7pvazdybWMyLUlLaTA/view?usp=drivesdk)
 
 ## 安裝LINE bot SDK
 ``` bash
@@ -74,7 +74,7 @@ app = Flask(__name__)
 line_bot_api = LineBotApi('YOUR_CHANNEL_ACCESS_TOKEN') ## 填入你的AccessToken
 handler = WebhookHandler('YOUR_CHANNEL_SECRET') ## 填入你的Channel Secret
 
-
+## 系統會掛在callback的路徑之上，但傳送訊息給機器人之後，LINE會主動進行Callback的動作通知你的Server並且把資訊都提交給你，之後你便可以將使用者的訊息內容，修改或者萃取重點，並且回傳給USER
 @app.route("/callback", methods=['POST'])
 def callback():
     # get X-Line-Signature header value
