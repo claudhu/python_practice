@@ -17,9 +17,9 @@ def zip(*iterables):
         yield tuple(result)
  ```  
  
-The left-to-right evaluation order of the iterables is guaranteed. This makes possible an idiom for clustering a data series into n-length groups using zip(*[iter(s)]*n).
+The left-to-right evaluation order of the iterables is guaranteed. This makes possible an idiom for clustering a data series into n-length groups using `zip1(*[iter(s)]*n)`.
 
-zip() should only be used with unequal length inputs when you don’t care about trailing, unmatched values from the longer iterables. If those values are important, use itertools.zip_longest() instead.
+zip() should only be used with unequal length inputs when you don’t care about trailing, unmatched values from the longer iterables. If those values are important, use `itertools.zip_longest()` instead.
 
 zip() in conjunction with the * operator can be used to unzip a list:  
 
